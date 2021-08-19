@@ -6,12 +6,15 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
+import PokemonList from "./Components/PokemonList";
+import TypeList from "./Components/TypeList";
+
 
 export default function App() {
   return (
     <Router>
       <div className="App">
-      <Header />
+      <h1>Pokemon API</h1>
         <nav>
             <Link to="/pokemons" className="App-linkButton">Pokemons</Link>
             <Link to="/types" className="App-linkButton">Types</Link>         
@@ -19,32 +22,16 @@ export default function App() {
 
         <Switch>
           <Route path="/pokemons">
-            <Pokemons />
+            <PokemonList />
           </Route>
           <Route path="/types">
-            <Types />
+            <TypeList />
           </Route>
           <Route path="/">
-            <Home />
+          <h2>Click above to see pokemons or pokemon types!</h2>
           </Route>
         </Switch>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function Pokemons() {
-  return <h2>List of all pokemons</h2>;
-}
-
-function Types() {
-  return <h2>List of pokemon types</h2>;
-}
-
-function Header() {
-  return <h1>Pokemon API</h1>;
 }
