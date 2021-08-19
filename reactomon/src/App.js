@@ -2,12 +2,12 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import './App.css';
 import PokemonList from "./Components/PokemonList";
 import TypeList from "./Components/TypeList";
+import Navbar from "./Components/Navbar";
 
 
 export default function App() {
@@ -15,11 +15,7 @@ export default function App() {
     <Router>
       <div className="App">
       <h1>Pokemon API</h1>
-        <nav>
-            <Link to="/pokemons" className="App-linkButton">Pokemons</Link>
-            <Link to="/types" className="App-linkButton">Types</Link>         
-        </nav>
-
+        <Navbar />
         <Switch>
           <Route path="/pokemons">
             <PokemonList />
