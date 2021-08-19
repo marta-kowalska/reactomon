@@ -14,6 +14,7 @@ export default class PokemonList extends React.Component {
             temp = response.data.results;
         })
         .then(() => {
+            // TODO: find another solution for image display
             for(let pokemon of temp){
                 axios.get(pokemon.url)
                 .then((res) => {
