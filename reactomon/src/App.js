@@ -5,15 +5,16 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import './App.css';
 
 export default function App() {
   return (
     <Router>
+      <div className="App">
       <Header />
-      <div>
         <nav>
-            <button><Link to="/pokemons">Pokemons</Link></button>
-            <button><Link to="/types">Types</Link></button>           
+            <Link to="/pokemons" className="App-linkButton">Pokemons</Link>
+            <Link to="/types" className="App-linkButton">Types</Link>         
         </nav>
 
         <Switch>
@@ -45,5 +46,5 @@ function Types() {
 }
 
 function Header() {
-  return <h1>This is header of the page</h1>;
+  return <h1>Pokemon API</h1>;
 }
