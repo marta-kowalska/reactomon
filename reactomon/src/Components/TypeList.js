@@ -14,5 +14,5 @@ export default class TypeList extends React.Component {
     }
 
     render() {
-        return <div>{this.state.types.map(type => <p>{type.name}</p>)}</div>    }
+        return <div className="mini-card-wrapper">{this.state.types.map(type => <div className="mini-card">{type.name}</div>)}</div>    }
 }

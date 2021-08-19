@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import '../App.css'; 
 
 export default class PokemonList extends React.Component {
     state = {
@@ -14,5 +15,5 @@ export default class PokemonList extends React.Component {
     }
 
     render() {
-        return <div>{this.state.pokemons.map(pokemon => <p>{pokemon.name}</p>)}</div>    }
+        return <div className="mini-card-wrapper">{this.state.pokemons.map(pokemon => <div className="mini-card">{pokemon.name}</div>)}</div>    }
 }
