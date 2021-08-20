@@ -1,26 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import '../App.css'; 
 
-export default class Card extends React.Component {
-    state = {
-        image: null,
-        fullData: []
-    }
+export default function Card(props) {
+    const [image, setImage] = useState(null);
 
-    componentDidMount(){
-        axios.get(this.props.item.url)
+    useEffect(()=>{
+        axios.get(props.item.url)
         .then(response => {
-            this.setState({ image: response.data.sprites.front_default });
-            this.setState({ fullData: response.data });
+            setImage(response.data.sprites.front_default);
         })
-        }
+    })
     
+    return(
+    <div className="mini-card">
+        <p>{props.item.name}</p>
+        <p><img src={image} alt={props.item.name}></img></p>
+    </div>
+    )
 
-    render() {
-        return(<div className="mini-card">
-        <p>{this.props.item.name}</p>
-        <p><img src={this.state.image} alt={this.props.item.name}></img></p>
-        </div>)
-             }
 }
