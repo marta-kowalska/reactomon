@@ -13,7 +13,7 @@ export default function TypeList() {
 
     return (
         <div className="mini-card-wrapper">
-            {types.map(type => <div className="mini-card">{type.name}</div>)}
+            {types.map(type => <div className="mini-card" key={type.name}>{type.name}</div>)}
         </div>
     )
 }

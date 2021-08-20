@@ -16,7 +16,7 @@ export default function PokemonList() {
     return (
     <div className="mini-card-wrapper">
     {pokemons.map(pokemon =>
-        <Card item={pokemon} />)}
+        <Card item={pokemon} key={pokemon.name}/>)}
          </div>
          );
    
