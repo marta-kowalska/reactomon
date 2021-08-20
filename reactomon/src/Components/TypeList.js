@@ -9,7 +9,7 @@ export default function TypeList() {
         .then(response => {
             setTypes(response.data.results);
         })
-    })
+    }, [])
 
     return (
         <div className="mini-card-wrapper">

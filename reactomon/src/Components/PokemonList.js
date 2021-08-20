@@ -11,7 +11,7 @@ export default function PokemonList() {
         .then(response => {
             setPokemons(response.data.results);
         })
-    })
+    }, [])
 
     return (
     <div className="mini-card-wrapper">

@@ -9,7 +9,7 @@ export default function Card(props) {
         axios.get(props.item.url)
         .then(response => {
             setImage(response.data.sprites.front_default);
-        })
+        }, [])
     })
     
     return(
