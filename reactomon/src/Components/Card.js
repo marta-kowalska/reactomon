@@ -9,16 +9,16 @@ export default function Card(props) {
     const [pokemonData, setData] = useState([]);
 
     useEffect(()=>{
-        axios.get(props.item.url)
+    axios.get(props.item.url)
         .then(response => {
             setImage(response.data.sprites.front_default);
             setData(response.data);
-        }, [])
-    })
+        })
+    }, [])
     
     return(
     <div className="mini-card"><Link to={{
-        pathname: '/pokemon-details', 
+        pathname: `/pokemon-details/${pokemonData.id}`, 
         pokemonData}
     }>
         <p>{props.item.name}</p>

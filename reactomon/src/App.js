@@ -24,7 +24,7 @@ export default function App() {
           <Route path="/types">
             <TypeList />
           </Route>
-          <Route path='/pokemon-details'>
+          <Route path='/pokemon-details/:handle'>
             <PokemonDetails />
           </Route>
           <Route path="/">
