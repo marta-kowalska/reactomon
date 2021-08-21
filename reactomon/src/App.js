@@ -8,6 +8,7 @@ import './App.css';
 import PokemonList from "./Components/PokemonList";
 import TypeList from "./Components/TypeList";
 import Navbar from "./Components/Navbar";
+import PokemonDetails from "./Components/PokemonDetails";
 
 
 export default function App() {
@@ -23,8 +24,11 @@ export default function App() {
           <Route path="/types">
             <TypeList />
           </Route>
+          <Route path='/pokemon-details/:handle'>
+            <PokemonDetails />
+          </Route>
           <Route path="/">
-          <h2>Click above to see pokemons or pokemon types!</h2>
+            <h2>Click above to see pokemons or pokemon types!</h2>
           </Route>
         </Switch>
       </div>
