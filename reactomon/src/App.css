@@ -2,22 +2,6 @@
 	text-align: center;
 }
 
-.App-linkButton {
-	text-decoration: none;
-	padding: 10px;
-	margin: 20px;
-	background-color: goldenrod;
-}
-
-.App-linkButton:visited {
-	color: black;
-}
-
-.App-linkButton:hover {
-	background-color:black;
-  	color: goldenrod;
-}
-
 .mini-card-wrapper {
     display: flex;
     flex-wrap: wrap;
