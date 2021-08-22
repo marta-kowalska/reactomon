@@ -8,6 +8,7 @@ const LinkButton = styled.button`
     margin: 20px;
     background-color: goldenrod;
     border: none;
+    cursor: pointer;  
     &:visited{
         color: black;
     }
@@ -19,7 +20,8 @@ const LinkButton = styled.button`
 
 export default function Navbar() {
 
-        return (<nav>
+    return (
+    <nav>
         <Link to="/pokemons"><LinkButton>Pokemons</LinkButton></Link>
         <Link to="/types"><LinkButton>Types</LinkButton></Link>         
     </nav>)   
