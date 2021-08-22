@@ -4,18 +4,24 @@ import '../App.css';
 
 import { useLocation, useParams } from 'react-router-dom';
 
+export const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 export default function PokemonDetails() {
     const location = useLocation();
     const { handle } = useParams();
     const [image, setImage] = useState(null);
     const [types, setTypes] = useState([]);
     const [thisData, setPokemonData] = useState([]);
+    const [name, setName] = useState(null);
 
     useEffect(()=>{
         if(location.pokemonData){
             setPokemonData(location.pokemonData);
             setImage(location.pokemonData.sprites.front_default)
             setTypes(getTypes(location.pokemonData.types));
+            setName(capitalize(location.pokemonData.name))
         } else {
     
         axios.get(`https://pokeapi.co/api/v2/pokemon/${handle}/`)
@@ -23,6 +29,7 @@ export default function PokemonDetails() {
                 setPokemonData(response.data);
                 setImage(response.data.sprites.front_default)
                 setTypes(getTypes(response.data.types));
+                setName(capitalize(response.data.name))
             })
         }
     
@@ -37,12 +44,10 @@ export default function PokemonDetails() {
     }
 
     return (<div>
-        <h2>{thisData.name}</h2>
+        <h2>{name}</h2>
         <img src={image} alt={thisData.name}></img>
         <p>Types: {types}</p>
   
         </div>);
 
-
-   
 }
